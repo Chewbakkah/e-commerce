@@ -18,14 +18,7 @@ router.get('/', (req, res) => {
       {
         model: Tag,
         attributes: ['id', 'tag_name'],
-        // through: ProductTag,
-        // as: 'product_description',
-        // include: {
-        //   attributes: [sequelize.literal('(SELECT id, product_id, tag_id FROM product_tag WHERE tag_id = product.tag.id)'), 'product_id']
-        //   // model: ProductTag,
-        //   // attributes: ['id', 'product_id', 'tag_id']
-        // }
-      }
+        }
     ]
   })
   .then(productInfo => res.json(productInfo))
